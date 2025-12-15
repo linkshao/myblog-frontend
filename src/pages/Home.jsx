@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+console.log("API URL =", import.meta.env.VITE_API_URL);
 
 function Home() {
   const [posts, setPosts] = useState([]);
