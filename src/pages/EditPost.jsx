@@ -10,7 +10,7 @@ function EditPost() {
 
   // 进入页面时加载文章内容
   useEffect(() => {
-    fetch(`http://localhost:8000/api/posts/${id}/`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}/`)
       .then((res) => res.json())
       .then((data) => {
         setTitle(data.title);
@@ -18,10 +18,12 @@ function EditPost() {
       });
   }, [id]);
 
+  `${import.meta.env.VITE_API_URL}/api/posts/`;
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch(`http://localhost:8000/api/posts/${id}/`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -6,7 +6,7 @@ function NewPost() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:8000/api/posts/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/posts/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
