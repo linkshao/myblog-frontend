@@ -6,7 +6,7 @@ function Article() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/posts/${id}/`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/posts/${id}/`)
       .then((res) => res.json())
       .then((data) => setPost(data));
   }, [id]);
